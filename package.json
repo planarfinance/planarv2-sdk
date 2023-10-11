@@ -10,7 +10,7 @@
   "module": "dist/core-sdk.esm.js",
   "scripts": {
     "lint": "tsdx lint src test",
-    "build": "yarn :qtsdx build",
+    "build": "yarn tsdx build",
     "watch": "tsdx watch",
     "test": "tsdx test --passWithNoTests",
     "postinstall": "yarn build"
