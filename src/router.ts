@@ -90,8 +90,9 @@ export abstract class Router {
 
     const to: string = validateAndParseAddress(options.recipient)
     const amountIn: string = toHex(trade.maximumAmountIn(options.allowedSlippage))
-    const amountOut: string = toHex(trade.minimumAmountOut(options.allowedSlippage))
+    const amountOutMin: string = toHex(trade.minimumAmountOut(options.allowedSlippage))
     const path: string[] = trade.route.path.map((token: Token) => token.address)
+    const referrer: string = ZERO_HEX // Setting it to Zero Address for the time being as Referral Fee Share is not implementing at this phase
     const deadline =
       'ttl' in options
         ? `0x${(Math.floor(new Date().getTime() / 1000) + options.ttl).toString(16)}`
@@ -105,40 +106,38 @@ export abstract class Router {
     switch (trade.tradeType) {
       case TradeType.EXACT_INPUT:
         if (etherIn) {
-          methodName = useFeeOnTransfer ? 'swapExactETHForTokensSupportingFeeOnTransferTokens' : 'swapExactETHForTokens'
-          // (uint amountOutMin, address[] calldata path, address to, uint deadline)
-          args = [amountOut, path, to, deadline]
+          methodName = 'swapExactETHForTokensSupportingFeeOnTransferTokens'
+          // (uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountOutMin, path, to, referrer, deadline]
           value = amountIn
         } else if (etherOut) {
-          methodName = useFeeOnTransfer ? 'swapExactTokensForETHSupportingFeeOnTransferTokens' : 'swapExactTokensForETH'
-          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
-          args = [amountIn, amountOut, path, to, deadline]
+          methodName = 'swapExactTokensForETHSupportingFeeOnTransferTokens'
+          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountIn, amountOutMin, path, to, referrer, deadline]
           value = ZERO_HEX
         } else {
-          methodName = useFeeOnTransfer
-            ? 'swapExactTokensForTokensSupportingFeeOnTransferTokens'
-            : 'swapExactTokensForTokens'
-          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
-          args = [amountIn, amountOut, path, to, deadline]
+          methodName = 'swapExactTokensForTokensSupportingFeeOnTransferTokens'
+          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountIn, amountOutMin, path, to, referrer, deadline]
           value = ZERO_HEX
         }
         break
       case TradeType.EXACT_OUTPUT:
         invariant(!useFeeOnTransfer, 'EXACT_OUT_FOT')
         if (etherIn) {
-          methodName = 'swapETHForExactTokens'
-          // (uint amountOut, address[] calldata path, address to, uint deadline)
-          args = [amountOut, path, to, deadline]
+          methodName = 'swapExactETHForTokensSupportingFeeOnTransferTokens'
+          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountIn, amountOutMin, path, to, referrer, deadline]
           value = amountIn
         } else if (etherOut) {
-          methodName = 'swapTokensForExactETH'
-          // (uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline)
-          args = [amountOut, amountIn, path, to, deadline]
+          methodName = 'swapExactTokensForETHSupportingFeeOnTransferTokens'
+          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountIn, amountOutMin, path, to, referrer, deadline]
           value = ZERO_HEX
         } else {
-          methodName = 'swapTokensForExactTokens'
-          // (uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline)
-          args = [amountOut, amountIn, path, to, deadline]
+          methodName = 'swapExactTokensForTokensSupportingFeeOnTransferTokens'
+          // (uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountOutMin, path, to, referrer, deadline]
           value = ZERO_HEX
         }
         break
