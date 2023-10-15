@@ -6,6 +6,7 @@ import { Trade } from './entities/Trade'
 import { TradeType } from './enums/TradeType'
 import invariant from 'tiny-invariant'
 import { validateAndParseAddress } from './functions/validateAndParseAddress'
+import { AddressZero } from '@ethersproject/constants'
 
 /**
  * Options for producing the arguments to send call to the router.
@@ -92,7 +93,7 @@ export abstract class Router {
     const amountIn: string = toHex(trade.maximumAmountIn(options.allowedSlippage))
     const amountOutMin: string = toHex(trade.minimumAmountOut(options.allowedSlippage))
     const path: string[] = trade.route.path.map((token: Token) => token.address)
-    const referrer: string = ZERO_HEX // Setting it to Zero Address for the time being as Referral Fee Share is not implementing at this phase
+    const referrer: string = AddressZero // Setting it to Zero Address for the time being as Referral Fee Share is not implementing at this phase
     const deadline =
       'ttl' in options
         ? `0x${(Math.floor(new Date().getTime() / 1000) + options.ttl).toString(16)}`
