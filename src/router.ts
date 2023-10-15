@@ -126,8 +126,8 @@ export abstract class Router {
         invariant(!useFeeOnTransfer, 'EXACT_OUT_FOT')
         if (etherIn) {
           methodName = 'swapExactETHForTokensSupportingFeeOnTransferTokens'
-          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
-          args = [amountIn, amountOutMin, path, to, referrer, deadline]
+          // (uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountOutMin, path, to, referrer, deadline]
           value = amountIn
         } else if (etherOut) {
           methodName = 'swapExactTokensForETHSupportingFeeOnTransferTokens'
@@ -136,8 +136,8 @@ export abstract class Router {
           value = ZERO_HEX
         } else {
           methodName = 'swapExactTokensForTokensSupportingFeeOnTransferTokens'
-          // (uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
-          args = [amountOutMin, path, to, referrer, deadline]
+          // (uint amountIn, uint amountOutMin, address[] calldata path, address to, address referrer, uint deadline)
+          args = [amountIn, amountOutMin, path, to, referrer, deadline]
           value = ZERO_HEX
         }
         break
