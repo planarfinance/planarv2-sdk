@@ -1,5 +1,5 @@
 import { ChainTokenMap, TokenMap } from '../types'
-import { SUSHI_ADDRESS, USDC_ADDRESS, USD_ADDRESS, WETH9_ADDRESS, WNATIVE_ADDRESS } from './addresses'
+import { SUSHI_ADDRESS, USDC_ADDRESS, USD_ADDRESS, WETH9_ADDRESS, WNATIVE_ADDRESS, GRAIL_ADDRESS } from './addresses'
 
 import { ChainId } from '../enums'
 import { Token } from '../entities/Token'
@@ -191,4 +191,8 @@ export const SUSHI: ChainTokenMap = {
   [ChainId.MOONBEAM]: new Token(ChainId.MOONBEAM, SUSHI_ADDRESS[ChainId.MOONBEAM], 18, 'SUSHI', 'SushiToken'),
   [ChainId.KAVA]: new Token(ChainId.KAVA, SUSHI_ADDRESS[ChainId.KAVA], 18, 'SUSHI', 'SushiToken'),
   [ChainId.METIS]: new Token(ChainId.METIS, SUSHI_ADDRESS[ChainId.METIS], 18, 'SUSHI', 'SushiToken'),
+}
+
+export const GRAIL: ChainTokenMap = {
+  [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, GRAIL_ADDRESS[ChainId.ARBITRUM], 18, 'GRAIL', 'Camelot token'),
 }

@@ -497,3 +497,7 @@ export const MULTISIG_ADDRESS: AddressMap = {
   // [ChainId.TELOS]: '',
   [ChainId.FUSE]: '0x33b6beb37837459Ee84a1Ffed2C6a4ca22e5F316',
 }
+
+export const GRAIL_ADDRESS: AddressMap = {
+  [ChainId.ARBITRUM]: '0x3d9907F9a368ad0a51Be60f7Da3b97cf940982D8',
+}
