@@ -9,11 +9,7 @@ import { Price } from '../entities/Price'
  * @param inputAmount the input amount of the trade
  * @param outputAmount the output amount of the trade
  */
-export function computePriceImpact<TBase extends Currency, TQuote extends Currency>(
-  midPrice: Price<TBase, TQuote>,
-  inputAmount: CurrencyAmount<TBase>,
-  outputAmount: CurrencyAmount<TQuote>
-): Percent {
+export function computePriceImpact<TBase extends Currency, TQuote extends Currency>(midPrice: Price<TBase, TQuote>, inputAmount: CurrencyAmount<TBase>, outputAmount: CurrencyAmount<TQuote>): Percent {
   const quotedOutputAmount = midPrice.quote(inputAmount)
   // calculate price impact := (exactQuote - outputAmount) / exactQuote
   const priceImpact = quotedOutputAmount.subtract(outputAmount).divide(quotedOutputAmount)

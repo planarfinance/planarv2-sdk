@@ -32,11 +32,7 @@ export class CurrencyAmount<T extends Currency> extends Fraction {
    * @param numerator the numerator of the fractional token amount
    * @param denominator the denominator of the fractional token amount
    */
-  public static fromFractionalAmount<T extends Currency>(
-    currency: T,
-    numerator: BigintIsh,
-    denominator: BigintIsh
-  ): CurrencyAmount<T> {
+  public static fromFractionalAmount<T extends Currency>(currency: T, numerator: BigintIsh, denominator: BigintIsh): CurrencyAmount<T> {
     return new CurrencyAmount(currency, numerator, denominator)
   }
 
@@ -69,19 +65,11 @@ export class CurrencyAmount<T extends Currency> extends Fraction {
     return CurrencyAmount.fromFractionalAmount(this.currency, divided.numerator, divided.denominator)
   }
 
-  public toSignificant(
-    significantDigits: number = 6,
-    format?: object,
-    rounding: Rounding = Rounding.ROUND_DOWN
-  ): string {
+  public toSignificant(significantDigits: number = 6, format?: object, rounding: Rounding = Rounding.ROUND_DOWN): string {
     return super.divide(this.decimalScale).toSignificant(significantDigits, format, rounding)
   }
 
-  public toFixed(
-    decimalPlaces: number = this.currency.decimals,
-    format?: object,
-    rounding: Rounding = Rounding.ROUND_DOWN
-  ): string {
+  public toFixed(decimalPlaces: number = this.currency.decimals, format?: object, rounding: Rounding = Rounding.ROUND_DOWN): string {
     invariant(decimalPlaces <= this.currency.decimals, 'DECIMALS')
     return super.divide(this.decimalScale).toFixed(decimalPlaces, format, rounding)
   }

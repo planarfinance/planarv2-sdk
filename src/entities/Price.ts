@@ -31,21 +31,13 @@ export class Price<TBase extends Currency, TQuote extends Currency> extends Frac
       ;[baseCurrency, quoteCurrency, denominator, numerator] = args
     } else {
       const result = args[0].quoteAmount.divide(args[0].baseAmount)
-      ;[baseCurrency, quoteCurrency, denominator, numerator] = [
-        args[0].baseAmount.currency,
-        args[0].quoteAmount.currency,
-        result.denominator,
-        result.numerator,
-      ]
+      ;[baseCurrency, quoteCurrency, denominator, numerator] = [args[0].baseAmount.currency, args[0].quoteAmount.currency, result.denominator, result.numerator]
     }
     super(numerator, denominator)
 
     this.baseCurrency = baseCurrency
     this.quoteCurrency = quoteCurrency
-    this.scalar = new Fraction(
-      JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(baseCurrency.decimals)),
-      JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(quoteCurrency.decimals))
-    )
+    this.scalar = new Fraction(JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(baseCurrency.decimals)), JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(quoteCurrency.decimals)))
   }
 
   /**

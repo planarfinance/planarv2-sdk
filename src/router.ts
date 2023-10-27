@@ -79,10 +79,7 @@ export abstract class Router {
    * @param trade to produce call parameters for
    * @param options options for the call parameters
    */
-  public static swapCallParameters(
-    trade: Trade<Currency, Currency, TradeType>,
-    options: TradeOptions | TradeOptionsDeadline
-  ): SwapParameters {
+  public static swapCallParameters(trade: Trade<Currency, Currency, TradeType>, options: TradeOptions | TradeOptionsDeadline): SwapParameters {
     const etherIn = trade.inputAmount.currency.isNative
     const etherOut = trade.outputAmount.currency.isNative
     // the router does not support both ether in and out
@@ -94,10 +91,7 @@ export abstract class Router {
     const amountOutMin: string = toHex(trade.minimumAmountOut(options.allowedSlippage))
     const path: string[] = trade.route.path.map((token: Token) => token.address)
     const referrer: string = AddressZero // Setting it to Zero Address for the time being as Referral Fee Share is not implementing at this phase
-    const deadline =
-      'ttl' in options
-        ? `0x${(Math.floor(new Date().getTime() / 1000) + options.ttl).toString(16)}`
-        : `0x${options.deadline.toString(16)}`
+    const deadline = 'ttl' in options ? `0x${(Math.floor(new Date().getTime() / 1000) + options.ttl).toString(16)}` : `0x${options.deadline.toString(16)}`
 
     const useFeeOnTransfer = Boolean(options.feeOnTransfer)
 
@@ -146,7 +140,7 @@ export abstract class Router {
     return {
       methodName,
       args,
-      value,
+      value
     }
   }
 }

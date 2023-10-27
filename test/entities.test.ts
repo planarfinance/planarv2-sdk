@@ -5,17 +5,13 @@ import { TradeType } from '../src/enums'
 import { WETH9 as _WETH9 } from '../src/constants'
 import invariant from 'tiny-invariant'
 
-const ADDRESSES = [
-  '0x0000000000000000000000000000000000000001',
-  '0x0000000000000000000000000000000000000002',
-  '0x0000000000000000000000000000000000000003',
-]
+const ADDRESSES = ['0x0000000000000000000000000000000000000001', '0x0000000000000000000000000000000000000002', '0x0000000000000000000000000000000000000003']
 const CHAIN_ID = 3
 const WETH9 = _WETH9[3]
 const DECIMAL_PERMUTATIONS: [number, number, number][] = [
   [0, 0, 0],
   [0, 9, 18],
-  [18, 18, 18],
+  [18, 18, 18]
 ]
 
 function decimalize(amount: number, decimals: number): JSBI {
@@ -23,7 +19,7 @@ function decimalize(amount: number, decimals: number): JSBI {
 }
 
 describe('entities', () => {
-  DECIMAL_PERMUTATIONS.forEach((decimals) => {
+  DECIMAL_PERMUTATIONS.forEach(decimals => {
     describe(`decimals permutation: ${decimals}`, () => {
       let tokens: Token[]
       beforeAll(() => {
@@ -32,20 +28,7 @@ describe('entities', () => {
 
       let pairs: Pair[]
       it('Pair', () => {
-        pairs = [
-          new Pair(
-            CurrencyAmount.fromRawAmount(tokens[0], decimalize(1, tokens[0].decimals)),
-            CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals))
-          ),
-          new Pair(
-            CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals)),
-            CurrencyAmount.fromRawAmount(tokens[2], decimalize(1, tokens[2].decimals))
-          ),
-          new Pair(
-            CurrencyAmount.fromRawAmount(tokens[2], decimalize(1, tokens[2].decimals)),
-            CurrencyAmount.fromRawAmount(WETH9, decimalize(1234, WETH9.decimals))
-          ),
-        ]
+        pairs = [new Pair(CurrencyAmount.fromRawAmount(tokens[0], decimalize(1, tokens[0].decimals)), CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals))), new Pair(CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals)), CurrencyAmount.fromRawAmount(tokens[2], decimalize(1, tokens[2].decimals))), new Pair(CurrencyAmount.fromRawAmount(tokens[2], decimalize(1, tokens[2].decimals)), CurrencyAmount.fromRawAmount(WETH9, decimalize(1234, WETH9.decimals)))]
       })
 
       let route: Route<Token, Token>
@@ -60,9 +43,7 @@ describe('entities', () => {
       it('#midPrice', () => {
         invariant(route.input.isToken)
         invariant(route.output.isToken)
-        expect(
-          route.midPrice.quote(CurrencyAmount.fromRawAmount(route.input, decimalize(1, route.input.decimals))).toExact()
-        ).toEqual(CurrencyAmount.fromRawAmount(route.output, decimalize(1234, route.output.decimals)).toExact())
+        expect(route.midPrice.quote(CurrencyAmount.fromRawAmount(route.input, decimalize(1, route.input.decimals))).toExact()).toEqual(CurrencyAmount.fromRawAmount(route.output, decimalize(1234, route.output.decimals)).toExact())
         expect(
           route.midPrice
             .invert()
@@ -78,16 +59,7 @@ describe('entities', () => {
       describe('Trade', () => {
         let route: Route<Token, Token>
         it('TradeType.EXACT_INPUT', () => {
-          route = new Route(
-            [
-              new Pair(
-                CurrencyAmount.fromRawAmount(tokens[1], decimalize(5, tokens[1].decimals)),
-                CurrencyAmount.fromRawAmount(WETH9, decimalize(10, WETH9.decimals))
-              ),
-            ],
-            tokens[1],
-            WETH9
-          )
+          route = new Route([new Pair(CurrencyAmount.fromRawAmount(tokens[1], decimalize(5, tokens[1].decimals)), CurrencyAmount.fromRawAmount(WETH9, decimalize(10, WETH9.decimals)))], tokens[1], WETH9)
           const inputAmount = CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals))
           const expectedOutputAmount = CurrencyAmount.fromRawAmount(WETH9, '1662497915624478906')
           const trade = new Trade(route, inputAmount, TradeType.EXACT_INPUT)
@@ -123,28 +95,11 @@ describe('entities', () => {
 
         it('minimum TradeType.EXACT_INPUT', () => {
           if ([9, 18].includes(tokens[1].decimals)) {
-            const route = new Route(
-              [
-                new Pair(
-                  CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals)),
-                  CurrencyAmount.fromRawAmount(
-                    WETH9,
-                    JSBI.add(
-                      decimalize(10, WETH9.decimals),
-                      tokens[1].decimals === 9 ? JSBI.BigInt('30090280812437312') : JSBI.BigInt('30090270812437322')
-                    )
-                  )
-                ),
-              ],
-              tokens[1],
-              WETH9
-            )
+            const route = new Route([new Pair(CurrencyAmount.fromRawAmount(tokens[1], decimalize(1, tokens[1].decimals)), CurrencyAmount.fromRawAmount(WETH9, JSBI.add(decimalize(10, WETH9.decimals), tokens[1].decimals === 9 ? JSBI.BigInt('30090280812437312') : JSBI.BigInt('30090270812437322'))))], tokens[1], WETH9)
             const outputAmount = CurrencyAmount.fromRawAmount(tokens[1], '1')
             const trade = new Trade(route, outputAmount, TradeType.EXACT_INPUT)
 
-            expect(trade.priceImpact.toSignificant(18)).toEqual(
-              tokens[1].decimals === 9 ? '0.300000099400899902' : '0.3000000000000001'
-            )
+            expect(trade.priceImpact.toSignificant(18)).toEqual(tokens[1].decimals === 9 ? '0.300000099400899902' : '0.3000000000000001')
           }
         })
       })

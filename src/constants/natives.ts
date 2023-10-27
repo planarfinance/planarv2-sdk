@@ -1,23 +1,4 @@
-import {
-  Avalanche,
-  Binance,
-  Celo,
-  Ether,
-  Fantom,
-  Fuse,
-  Glmr,
-  Harmony,
-  Heco,
-  Kava,
-  Matic,
-  Movr,
-  Okex,
-  Palm,
-  Telos,
-  xDai,
-  Metis,
-  Boba,
-} from '../entities/Native'
+import { Avalanche, Binance, Celo, Ether, Fantom, Fuse, Glmr, Harmony, Heco, Kava, Matic, Movr, Okex, Palm, Telos, xDai, Metis, Boba } from '../entities/Native'
 
 import { ChainId } from '../enums'
 import { NativeMap } from '../types'
@@ -56,5 +37,5 @@ export const NATIVE: NativeMap = {
   [ChainId.KAVA]: Kava.onChain(ChainId.KAVA),
   [ChainId.METIS]: Metis.onChain(ChainId.METIS),
   [ChainId.ARBITRUM_NOVA]: Ether.onChain(ChainId.ARBITRUM_NOVA),
-  [ChainId.BOBA_AVAX]: Boba.onChain(ChainId.BOBA_AVAX),
+  [ChainId.BOBA_AVAX]: Boba.onChain(ChainId.BOBA_AVAX)
 }
