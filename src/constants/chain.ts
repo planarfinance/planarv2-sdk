@@ -15,6 +15,7 @@ export const CHAIN_KEY: { [chainId: number]: ChainKey } = {
   [ChainId.BSC]: ChainKey.BSC,
   [ChainId.BSC_TESTNET]: ChainKey.BSC_TESTNET,
   [ChainId.ARBITRUM]: ChainKey.ARBITRUM,
+  [ChainId.SEPOLIA]: ChainKey.SEPOLIA,
   [ChainId.ARBITRUM_TESTNET]: ChainKey.ARBITRUM_TESTNET,
   [ChainId.MOONBEAM_TESTNET]: ChainKey.MOONBEAM_TESTNET,
   [ChainId.AVALANCHE]: ChainKey.AVALANCHE,

@@ -17,6 +17,7 @@ export const USDC: TokenMap = {
   [ChainId.OKEX]: new Token(ChainId.OKEX, USDC_ADDRESS[ChainId.OKEX], 18, 'USDC', 'USD Coin'),
   [ChainId.XDAI]: new Token(ChainId.XDAI, USDC_ADDRESS[ChainId.XDAI], 6, 'USDC', 'USD Coin'),
   [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, USDC_ADDRESS[ChainId.ARBITRUM], 6, 'USDC', 'USD Coin'),
+  [ChainId.SEPOLIA]: new Token(ChainId.SEPOLIA, USDC_ADDRESS[ChainId.SEPOLIA], 6, 'USDC', 'Planar Test USDC'),
   [ChainId.MOONRIVER]: new Token(ChainId.MOONRIVER, USDC_ADDRESS[ChainId.MOONRIVER], 6, 'USDC', 'USD Coin'),
   [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, USDC_ADDRESS[ChainId.AVALANCHE], 6, 'USDC', 'USD Coin'),
   [ChainId.FUSE]: new Token(ChainId.FUSE, USDC_ADDRESS[ChainId.FUSE], 6, 'USDC', 'USD Coin'),
@@ -40,6 +41,7 @@ export const WETH9: TokenMap = {
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, WETH9_ADDRESS[ChainId.GÖRLI], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.KOVAN]: new Token(ChainId.KOVAN, WETH9_ADDRESS[ChainId.KOVAN], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, WETH9_ADDRESS[ChainId.ARBITRUM], 18, 'WETH', 'Wrapped Ether'),
+  [ChainId.SEPOLIA]: new Token(ChainId.SEPOLIA, WETH9_ADDRESS[ChainId.SEPOLIA], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.ARBITRUM_TESTNET]: new Token(ChainId.ARBITRUM_TESTNET, WETH9_ADDRESS[ChainId.ARBITRUM_TESTNET], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.BSC]: new Token(ChainId.BSC, WETH9_ADDRESS[ChainId.BSC], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.FANTOM]: new Token(ChainId.FANTOM, WETH9_ADDRESS[ChainId.FANTOM], 18, 'WETH', 'Wrapped Ether'),
@@ -75,6 +77,7 @@ export const WNATIVE: TokenMap = {
   [ChainId.BSC]: new Token(ChainId.BSC, WNATIVE_ADDRESS[ChainId.BSC], 18, 'WBNB', 'Wrapped BNB'),
   [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, WNATIVE_ADDRESS[ChainId.BSC_TESTNET], 18, 'WBNB', 'Wrapped BNB'),
   [ChainId.ARBITRUM]: WETH9[ChainId.ARBITRUM],
+  [ChainId.SEPOLIA]: WETH9[ChainId.SEPOLIA],
   [ChainId.ARBITRUM_TESTNET]: WETH9[ChainId.ARBITRUM_TESTNET],
   [ChainId.MOONBEAM_TESTNET]: new Token(ChainId.MOONBEAM_TESTNET, WNATIVE_ADDRESS[ChainId.MOONBEAM_TESTNET], 18, 'WETH', 'Wrapped Ether'),
   [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, WNATIVE_ADDRESS[ChainId.AVALANCHE], 18, 'WAVAX', 'Wrapped AVAX'),
@@ -122,5 +125,6 @@ export const SUSHI: ChainTokenMap = {
 }
 
 export const GRAIL: ChainTokenMap = {
-  [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, GRAIL_ADDRESS[ChainId.ARBITRUM], 18, 'GRAIL', 'Camelot token')
+  [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, GRAIL_ADDRESS[ChainId.ARBITRUM], 18, 'GRAIL', 'Camelot token'),
+  [ChainId.SEPOLIA]: new Token(ChainId.SEPOLIA, GRAIL_ADDRESS[ChainId.SEPOLIA], 18, 'PLANE', 'Planar token')
 }
