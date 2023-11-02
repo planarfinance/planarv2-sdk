@@ -13,7 +13,7 @@ export const INIT_CODE_HASH: { [chainId: number]: string } = {
   [ChainId.BSC]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   [ChainId.BSC_TESTNET]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   [ChainId.ARBITRUM]: '0xa856464ae65f7619087bc369daaf7e387dae1e5af69cfa7935850ebf754b04c1', // FIXME: Note it down at the time of Factory Contract Creation
-  [ChainId.SEPOLIA]: '0xa856464ae65f7619087bc369daaf7e387dae1e5af69cfa7935850ebf754b04c1',
+  [ChainId.SEPOLIA]: '0x50988c1ea9185b6b85c4511653a6ddb7013ee1911e6d3d09ee21fd99bbd88223',
   [ChainId.MOONBEAM_TESTNET]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   [ChainId.AVALANCHE]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   [ChainId.AVALANCHE_TESTNET]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
