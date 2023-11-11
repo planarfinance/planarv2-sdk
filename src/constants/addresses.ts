@@ -516,3 +516,7 @@ export const GRAIL_ADDRESS: AddressMap = {
 export const PLANARTESTTOKENFAUCET_ADDRESS: AddressMap = {
   [ChainId.SEPOLIA]: '0xcCe8F3dD2fA88fdBF2c2deDcCc9D37008fBf670d'
 }
+
+export const POSITIONHELPER_ADDRESS: AddressMap = {
+  [ChainId.SEPOLIA]: '0x6E84593B20B137C48Ef62D0142D78bF32266DF40'
+}
