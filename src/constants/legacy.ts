@@ -32,3 +32,7 @@ export const INIT_CODE_HASH: { [chainId: number]: string } = {
   [ChainId.ARBITRUM_NOVA]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   [ChainId.BOBA_AVAX]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303'
 }
+
+export const INIT_CODE_HASH_LPNFT: { [chainId: number]: string } = {
+  [ChainId.SEPOLIA]: '0x8bc1b21631836790d93d787b3246c1919536515c303c32f906a52e3c4f4f808e',
+}
