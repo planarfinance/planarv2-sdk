@@ -34,5 +34,6 @@ export enum ChainKey {
   KAVA = 'kava',
   METIS = 'metis',
   ARBITRUM_NOVA = 'arbitrum-nova',
-  BOBA_AVAX = 'boba-avax'
+  BOBA_AVAX = 'boba-avax',
+  BLAST_SEPOLIA='blast-sepolia'
 }
