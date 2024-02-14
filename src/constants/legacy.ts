@@ -30,9 +30,11 @@ export const INIT_CODE_HASH: { [chainId: number]: string } = {
   [ChainId.TELOS]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   [ChainId.MOONBEAM]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
   [ChainId.ARBITRUM_NOVA]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
-  [ChainId.BOBA_AVAX]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303'
+  [ChainId.BOBA_AVAX]: '0xe18a34eb0e04b04f7a0ac29a6e80748dca96319b42c54d679cb821dca90c6303',
+  [ChainId.BLAST_SEPOLIA]:'0x0738bcd3d24afb1a5acd8b674270ba9924b479c5c2e406e5e4de2cad9dc5a9b6'
 }
 
 export const INIT_CODE_HASH_LPNFT: { [chainId: number]: string } = {
   [ChainId.SEPOLIA]: '0x8bc1b21631836790d93d787b3246c1919536515c303c32f906a52e3c4f4f808e',
+  [ChainId.BLAST_SEPOLIA]:'0xf6f0c60fd36d4c92134ad29b0f5819aaa0d16340f5c0aba8800236d4b6c068fe'
 }
