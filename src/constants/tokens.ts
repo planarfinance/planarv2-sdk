@@ -27,7 +27,7 @@ export const USDC: TokenMap = {
   [ChainId.KAVA]: new Token(ChainId.KAVA, USDC_ADDRESS[ChainId.KAVA], 6, 'USDC', 'USD Coin'),
   [ChainId.METIS]: new Token(ChainId.METIS, USDC_ADDRESS[ChainId.METIS], 6, 'USDC', 'USD Coin'),
   [ChainId.ARBITRUM_NOVA]: new Token(ChainId.ARBITRUM_NOVA, USDC_ADDRESS[ChainId.ARBITRUM_NOVA], 6, 'USDC', 'USD Coin'),
-  [ChainId.BLAST_SEPOLIA]:new Token(ChainId.BLAST_SEPOLIA,USDC_ADDRESS[ChainId.BLAST_SEPOLIA],6,'USDC','Planar Test USDC')
+  [ChainId.BLAST_SEPOLIA]:new Token(ChainId.BLAST_SEPOLIA,USDC_ADDRESS[ChainId.BLAST_SEPOLIA],6,'USDB','Planar Test USDB')
 }
 
 export const USD: TokenMap = {
