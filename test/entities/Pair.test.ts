@@ -1,7 +1,7 @@
 import { CurrencyAmount, Pair, Price, Token } from '../../src/entities'
 
 import { InsufficientInputAmountError } from '../../src/errors'
-import { WETH9 } from '../../src/constants'
+import { WETH } from '../../src/constants'
 import { computePairAddress } from '../../src/functions'
 
 describe('computePairAddress', () => {
@@ -45,7 +45,7 @@ describe('Pair', () => {
 
   describe('constructor', () => {
     it('cannot be used for tokens on different chains', () => {
-      expect(() => new Pair(CurrencyAmount.fromRawAmount(USDC, '100'), CurrencyAmount.fromRawAmount(WETH9[3], '100'))).toThrow('CHAIN_IDS')
+      expect(() => new Pair(CurrencyAmount.fromRawAmount(USDC, '100'), CurrencyAmount.fromRawAmount(WETH[3], '100'))).toThrow('CHAIN_IDS')
     })
   })
 
@@ -102,7 +102,7 @@ describe('Pair', () => {
     })
 
     it('throws if invalid token', () => {
-      expect(() => pair.priceOf(WETH9[1])).toThrow('TOKEN')
+      expect(() => pair.priceOf(WETH[1])).toThrow('TOKEN')
     })
   })
 
@@ -113,7 +113,7 @@ describe('Pair', () => {
     })
 
     it('throws if not in the pair', () => {
-      expect(() => new Pair(CurrencyAmount.fromRawAmount(DAI, '101'), CurrencyAmount.fromRawAmount(USDC, '100')).reserveOf(WETH9[1])).toThrow('TOKEN')
+      expect(() => new Pair(CurrencyAmount.fromRawAmount(DAI, '101'), CurrencyAmount.fromRawAmount(USDC, '100')).reserveOf(WETH[1])).toThrow('TOKEN')
     })
   })
 
@@ -126,7 +126,7 @@ describe('Pair', () => {
   describe('#involvesToken', () => {
     expect(new Pair(CurrencyAmount.fromRawAmount(USDC, '100'), CurrencyAmount.fromRawAmount(DAI, '100')).involvesToken(USDC)).toEqual(true)
     expect(new Pair(CurrencyAmount.fromRawAmount(USDC, '100'), CurrencyAmount.fromRawAmount(DAI, '100')).involvesToken(DAI)).toEqual(true)
-    expect(new Pair(CurrencyAmount.fromRawAmount(USDC, '100'), CurrencyAmount.fromRawAmount(DAI, '100')).involvesToken(WETH9[1])).toEqual(false)
+    expect(new Pair(CurrencyAmount.fromRawAmount(USDC, '100'), CurrencyAmount.fromRawAmount(DAI, '100')).involvesToken(WETH[1])).toEqual(false)
   })
   describe('miscellaneous', () => {
     it('getLiquidityMinted:0', async () => {

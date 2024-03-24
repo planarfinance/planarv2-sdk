@@ -2,7 +2,7 @@ import { CurrencyAmount, Pair, Route, Token, Trade } from '../src/entities'
 
 import JSBI from 'jsbi'
 import { TradeType } from '../src/enums'
-import { WETH9 as _WETH9 } from '../src/constants'
+import { WETH as _WETH9 } from '../src/constants'
 import invariant from 'tiny-invariant'
 
 const ADDRESSES = ['0x0000000000000000000000000000000000000001', '0x0000000000000000000000000000000000000002', '0x0000000000000000000000000000000000000003']

@@ -1,4 +1,4 @@
-import { FACTORY_ADDRESS, FIVE, MINIMUM_LIQUIDITY, ONE, ZERO, _1000, _997 } from '../constants'
+import { PLANARLIQUIDITYPOOLFACTORY_ADDRESS, FIVE, MINIMUM_LIQUIDITY, ONE, ZERO, _1000, _997 } from '../constants'
 import { InsufficientInputAmountError, InsufficientReservesError } from '../errors'
 
 import { BigintIsh } from '../types'
@@ -16,7 +16,7 @@ export class Pair {
 
   public static getAddress(tokenA: Token, tokenB: Token): string {
     return computePairAddress({
-      factoryAddress: FACTORY_ADDRESS[tokenA.chainId],
+      factoryAddress: PLANARLIQUIDITYPOOLFACTORY_ADDRESS[tokenA.chainId],
       tokenA,
       tokenB
     })
