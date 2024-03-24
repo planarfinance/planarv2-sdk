@@ -1,4 +1,4 @@
-import { AddressMap } from '../types'
+import { AddressListMap, AddressMap } from '../types'
 import { ChainId } from '../enums'
 
 // BLAST_SEPOLIA ADDRESSES
@@ -237,4 +237,38 @@ export const PENROSTESTTOKEN_ADDRESS: AddressMap = {
 
 export const BILVETESTTOKEN_ADDRESS: AddressMap = {
   [ChainId.BLAST_SEPOLIA]: '0xf61f038f08A318b5613F884A6Cc9d97ab74A11ac',
+}
+
+export const MOBIUSTOKEN_ADDRESS: AddressMap = {
+  [ChainId.BLAST_SEPOLIA]: '0xDDa41DB7bD819F6DE8499DAEC9Fe9a888EC5B029',
+}
+
+export const BELVEDERETOKEN_ADDRESS: AddressMap = {
+  [ChainId.BLAST_SEPOLIA]: '0xB0281FAB7Cd9a30C2e62b87DE3084e4D07863e98',
+}
+
+export const WHITELISTED_LPPOOLS: AddressListMap = {
+  [ChainId.BLAST_SEPOLIA]: [
+    WETHUSDBLP_ADDRESS[ChainId.BLAST_SEPOLIA],
+    PLANEWETHLP_ADDRESS[ChainId.BLAST_SEPOLIA],
+  ],
+}
+
+export const WHITELISTED_LPNFTPOOLS: AddressListMap = {
+  [ChainId.BLAST_SEPOLIA]: [
+    WETHUSDBLPNFTPOOL_ADDRESS[ChainId.BLAST_SEPOLIA],
+    PLANEWETHLPNFTPOOL_ADDRESS[ChainId.BLAST_SEPOLIA],
+  ],
+}
+
+export const WHITELISTED_HYPERPOOLS: AddressListMap = {
+  [ChainId.BLAST_SEPOLIA]: [
+    WETHUSDBORIGINPOOL_ADDRESS[ChainId.BLAST_SEPOLIA],
+  ],
+}
+
+export const ORIGIN_HYPERPOOLS: AddressListMap = {
+  [ChainId.BLAST_SEPOLIA]: [
+    PLANEWETHLP_ADDRESS[ChainId.BLAST_SEPOLIA],
+  ],
 }
