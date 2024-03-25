@@ -1,6 +1,7 @@
 export const ABI: {
   BalanceFetcher: string
   Blast: string
+  BlastPoints: string
   DividendsV2: string
   ERC20: string
   ERC20Bytes32: string
@@ -34,6 +35,7 @@ export const ABI: {
 } = {
   BalanceFetcher: require('./BalanceFetcher.json') as string,
   Blast: require('./Blast.json') as string,
+  BlastPoints: require('./BlastPoints.json') as string,
   DividendsV2: require('./DividendsV2.json') as string,
   ERC20: require('./ERC20.json') as string,
   ERC20Bytes32: require('./ERC20Bytes32.json') as string,
