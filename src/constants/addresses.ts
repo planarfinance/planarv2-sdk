@@ -9,7 +9,7 @@ export const BLAST_ADDRESS: AddressMap = {
   [ChainId.BLAST_SEPOLIA]: '0x4300000000000000000000000000000000000002'
 }
 
-export const BLAST_POINTS_ADDRESS: AddressMap = {
+export const BLASTPOINTS_ADDRESS: AddressMap = {
   [ChainId.BLAST_SEPOLIA]: '0x2fc95838c71e76ec69ff817983BFf17c710F34E0'
 }
 
