@@ -2,12 +2,14 @@ export const ABI: {
   BalanceFetcher: string
   Blast: string
   DividendsV2: string
+  ERC20: string
   FairAuction: string
   HyperPool: string
   HyperPoolFactory: string
   Launchpad: string
   LpNFTPool: string
   LpNFTPoolFactory: string
+  Multicall3: string
   PlanarLiquidityPool: string
   PlanarLiquidityPoolFactory: string
   PlanarLiquidityPoolRouter: string
@@ -30,12 +32,14 @@ export const ABI: {
   BalanceFetcher: require('./BalanceFetcher.json') as string,
   Blast: require('./Blast.json') as string,
   DividendsV2: require('./DividendsV2.json') as string,
+  ERC20: require('./ERC20.json') as string,
   FairAuction: require('./FairAuction.json') as string,
   HyperPool: require('./HyperPool.json') as string,
   HyperPoolFactory: require('./HyperPoolFactory.json') as string,
   Launchpad: require('./Launchpad.json') as string,
   LpNFTPool: require('./LpNFTPool.json') as string,
   LpNFTPoolFactory: require('./LpNFTPoolFactory.json') as string,
+  Multicall3: require('./Multicall3.json') as string,
   PlanarLiquidityPool: require('./PlanarLiquidityPool.json') as string,
   PlanarLiquidityPoolFactory: require('./PlanarLiquidityPoolFactory.json') as string,
   PlanarLiquidityPoolRouter: require('./PlanarLiquidityPoolRouter.json') as string,
