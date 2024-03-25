@@ -3,6 +3,7 @@ export const ABI: {
   Blast: string
   DividendsV2: string
   ERC20: string
+  ERC20Bytes32: string
   FairAuction: string
   HyperPool: string
   HyperPoolFactory: string
@@ -35,6 +36,7 @@ export const ABI: {
   Blast: require('./Blast.json') as string,
   DividendsV2: require('./DividendsV2.json') as string,
   ERC20: require('./ERC20.json') as string,
+  ERC20Bytes32: require('./ERC20Bytes32.json') as string,
   FairAuction: require('./FairAuction.json') as string,
   HyperPool: require('./HyperPool.json') as string,
   HyperPoolFactory: require('./HyperPoolFactory.json') as string,
