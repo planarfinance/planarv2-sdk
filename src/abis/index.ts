@@ -25,7 +25,9 @@ export const ABI: {
   Refund: string
   UniswapInterfaceMulticall: string
   UniswapV2ERC20: string
+  USDB: string
   VestingWallet2: string
+  WETHRebasing: string
   XPlaneToken: string
   YieldBooster: string
 } = {
@@ -55,7 +57,9 @@ export const ABI: {
   Refund: require('./Refund.json') as string,
   UniswapInterfaceMulticall: require('./UniswapInterfaceMulticall.json') as string,
   UniswapV2ERC20: require('./UniswapV2ERC20.json') as string,
+  USDB: require('./USDB.json') as string,
   VestingWallet2: require('./VestingWallet2.json') as string,
+  WETHRebasing: require('./WETHRebasing.json') as string,
   XPlaneToken: require('./XPlaneToken.json') as string,
   YieldBooster: require('./YieldBooster.json') as string
 }
