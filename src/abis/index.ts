@@ -1,69 +1,34 @@
-export const ABI: {
-  BalanceFetcher: string
-  Blast: string
-  BlastPoints: string
-  DividendsV2: string
-  ERC20: string
-  ERC20Bytes32: string
-  FairAuction: string
-  HyperPool: string
-  HyperPoolFactory: string
-  Launchpad: string
-  LpNFTPool: string
-  LpNFTPoolFactory: string
-  Multicall3: string
-  PlanarLiquidityPool: string
-  PlanarLiquidityPoolFactory: string
-  PlanarLiquidityPoolRouter: string
-  PlanarMaster: string
-  PlanarTestnetToken: string
-  PlanarTestnetTokenFactory: string
-  PlanarTestnetTokenFaucet: string
-  PlaneToken: string
-  PositionHelper: string
-  Presale: string
-  PriceConsumerV3: string
-  ProtocolEarnings: string
-  Refund: string
-  UniswapInterfaceMulticall: string
-  UniswapV2ERC20: string
-  USDB: string
-  VestingWallet2: string
-  WETHRebasing: string
-  XPlaneToken: string
-  YieldBooster: string
-} = {
-  BalanceFetcher: require('./BalanceFetcher.json') as string,
-  Blast: require('./Blast.json') as string,
-  BlastPoints: require('./BlastPoints.json') as string,
-  DividendsV2: require('./DividendsV2.json') as string,
-  ERC20: require('./ERC20.json') as string,
-  ERC20Bytes32: require('./ERC20Bytes32.json') as string,
-  FairAuction: require('./FairAuction.json') as string,
-  HyperPool: require('./HyperPool.json') as string,
-  HyperPoolFactory: require('./HyperPoolFactory.json') as string,
-  Launchpad: require('./Launchpad.json') as string,
-  LpNFTPool: require('./LpNFTPool.json') as string,
-  LpNFTPoolFactory: require('./LpNFTPoolFactory.json') as string,
-  Multicall3: require('./Multicall3.json') as string,
-  PlanarLiquidityPool: require('./PlanarLiquidityPool.json') as string,
-  PlanarLiquidityPoolFactory: require('./PlanarLiquidityPoolFactory.json') as string,
-  PlanarLiquidityPoolRouter: require('./PlanarLiquidityPoolRouter.json') as string,
-  PlanarMaster: require('./PlanarMaster.json') as string,
-  PlanarTestnetToken: require('./PlanarTestnetToken.json') as string,
-  PlanarTestnetTokenFactory: require('./PlanarTestnetTokenFactory.json') as string,
-  PlanarTestnetTokenFaucet: require('./PlanarTestnetTokenFaucet.json') as string,
-  PlaneToken: require('./PlaneToken.json') as string,
-  PositionHelper: require('./PositionHelper.json') as string,
-  Presale: require('./Presale.json') as string,
-  PriceConsumerV3: require('./PriceConsumerV3.json') as string,
-  ProtocolEarnings: require('./ProtocolEarnings.json') as string,
-  Refund: require('./Refund.json') as string,
-  UniswapInterfaceMulticall: require('./UniswapInterfaceMulticall.json') as string,
-  UniswapV2ERC20: require('./UniswapV2ERC20.json') as string,
-  USDB: require('./USDB.json') as string,
-  VestingWallet2: require('./VestingWallet2.json') as string,
-  WETHRebasing: require('./WETHRebasing.json') as string,
-  XPlaneToken: require('./XPlaneToken.json') as string,
-  YieldBooster: require('./YieldBooster.json') as string
-}
+import BalanceFetcher from './BalanceFetcher.json'
+import Blast from './Blast.json'
+import BlastPoints from './BlastPoints.json'
+import DividendsV2 from './DividendsV2.json'
+import ERC20 from './ERC20.json'
+import ERC20Bytes32 from './ERC20Bytes32.json'
+import FairAuction from './FairAuction.json'
+import HyperPool from './HyperPool.json'
+import HyperPoolFactory from './HyperPoolFactory.json'
+import Launchpad from './Launchpad.json'
+import LpNFTPool from './LpNFTPool.json'
+import LpNFTPoolFactory from './LpNFTPoolFactory.json'
+import Multicall3 from './Multicall3.json'
+import PlanarLiquidityPool from './PlanarLiquidityPool.json'
+import PlanarLiquidityPoolFactory from './PlanarLiquidityPoolFactory.json'
+import PlanarLiquidityPoolRouter from './PlanarLiquidityPoolRouter.json'
+import PlanarMaster from './PlanarMaster.json'
+import PlanarTestnetToken from './PlanarTestnetToken.json'
+import PlanarTestnetTokenFactory from './PlanarTestnetTokenFactory.json'
+import PlanarTestnetTokenFaucet from './PlanarTestnetTokenFaucet.json'
+import PlaneToken from './PlaneToken.json'
+import PositionHelper from './PositionHelper.json'
+import Presale from './Presale.json'
+import PriceConsumerV3 from './PriceConsumerV3.json'
+import ProtocolEarnings from './ProtocolEarnings.json'
+import Refund from './Refund.json'
+import UniswapInterfaceMulticall from './UniswapInterfaceMulticall.json'
+import UniswapV2ERC20 from './UniswapV2ERC20.json'
+import VestingWallet2 from './VestingWallet2.json'
+import WETHRebasing from './WETHRebasing.json'
+import XPlaneToken from './XPlaneToken.json'
+import YieldBooster from './YieldBooster.json'
+
+export { BalanceFetcher, Blast, BlastPoints, DividendsV2, ERC20, ERC20Bytes32, FairAuction, HyperPool, HyperPoolFactory, Launchpad, LpNFTPool, LpNFTPoolFactory, Multicall3, PlanarLiquidityPool, PlanarLiquidityPoolFactory, PlanarLiquidityPoolRouter, PlanarMaster, PlanarTestnetToken, PlanarTestnetTokenFactory, PlanarTestnetTokenFaucet, PlaneToken, PositionHelper, Presale, PriceConsumerV3, ProtocolEarnings, Refund, UniswapInterfaceMulticall, UniswapV2ERC20, VestingWallet2, WETHRebasing, XPlaneToken, YieldBooster }
